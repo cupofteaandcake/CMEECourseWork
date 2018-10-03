@@ -1,0 +1,5 @@
+wc -l ../Data/fasta/407228326.fasta | wc -l ../Data/fasta/407228412.fasta | wc -l ../Data/fasta/E.coli.fasta #1
+grep -i -w -v > ../Data/fasta/E.coli.fasta #2
+grep -i -w -v > ../Data/fasta/E.coli.fasta | wc -m
+grep -i -w -v "(>|\n)" ../Data/fasta/E.coli.fasta | grep -i ATGC | wc -l #4
+grep -i AT ../Data/fasta/E.coli.fasta | wc -l > a | grep -i GC ../Data/fasta/E.coli.fasta | wc -l > b | echo "scale=1; a/b" | bc #5
