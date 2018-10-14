@@ -322,29 +322,29 @@ rm: cannot remove '*.out': No such file or directory
 rm: cannot remove '*.snm': No such file or directory
 rm: cannot remove '*.toc': No such file or directory
 
-** (evince:24371): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2018-19/Coursework/StudentRepos/TaliaAl-Mushadani_TA1915/Week1/Code/.pdf': No such file or directory
+** (evince:27217): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2018-19/Coursework/StudentRepos/TaliaAl-Mushadani_TA1915/Week1/Code/.pdf': No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:24371): WARNING **: Error setting file metadata: No such file or directory
+** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
 
 ======================================================================
 Inspecting script file .txt...
@@ -468,7 +468,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00533s
+Time consumed = 0.00881s
 
 ======================================================================
 Inspecting script file FirstExample.tex...
@@ -525,7 +525,7 @@ Hello mhasoba
 
 Code ran without errors
 
-Time consumed = 0.00857s
+Time consumed = 0.00643s
 
 ======================================================================
 Inspecting script file FirstBiblio.bib...
@@ -587,7 +587,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00744s
+Time consumed = 0.00756s
 
 ======================================================================
 Inspecting script file boilerplate.sh...
@@ -618,7 +618,7 @@ This is a shell script!
 
 Code ran without errors
 
-Time consumed = 0.00542s
+Time consumed = 0.00402s
 
 ======================================================================
 ======================================================================
