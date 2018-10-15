@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""This short script adds a newline character in between each species stored in birds"""
+"""This short script is a simple for loop which prints each species on a new line"""
 
 __appname__ = 'tuple.py'
 __author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
@@ -23,5 +23,6 @@ birds = ( ('Passerculus sandwichensis','Savannah sparrow',18.7),
 # ALSO, PLEASE INCLUDE A DOCSTRING AT THE BEGINNING OF THIS FILE THAT 
 # SAYS WHAT THE SCRIPT DOES AND WHO THE AUTHOR IS
 
-newline_join = "\n".join(str(species) for species in birds)
-print(newline_join)
+# for loop accessing each element in the list birds
+for species in birds:
+    print(species)
