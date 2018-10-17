@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+"""This script demonstrates the usability of local and global variables"""
+
+__appname__ = 'scope.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 #first
 _a_global = 10
 

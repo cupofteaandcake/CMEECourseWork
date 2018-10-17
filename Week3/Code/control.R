@@ -11,7 +11,7 @@ if (a == TRUE){
 ## On a single line
 z <- runif(1) ##random number
 if (z <= 0.5) {
-    print("Less than a quarter")
+    print("Less than a half")
 }
 
 ## For loop using a sequence

@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+"""Script illustrating the use of for, while and if control statements in python"""
+
+__appname__ = 'cfexercises1.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 for i in range(3,17):
     print('hello')
 

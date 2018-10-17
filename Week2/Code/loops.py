@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+"""Script illustrating the use of loops in python"""
+
+__appname__ = 'loops.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 # FOR loops in Python
 for i in range(5):
     print(i)

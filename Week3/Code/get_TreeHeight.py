@@ -26,7 +26,7 @@ def TreeHeight(degrees, distance):
 
 def main(argv):
     """Main entry point of the program"""
-    input_csv = "../Data/%d" %sys.argv[1]
+    input_csv = "../Data/%d" %sys.argv[2]
     f = open(input_csv, 'r')
     TreeData = csv.reader(f)
     for species in TreeData:

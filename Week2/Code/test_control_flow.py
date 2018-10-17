@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 
-"""Some functions exemplifying the use of control statements"""
+"""Script illustrating the use of doctests"""
 
-__author__ = 'Your Name (Your.Name@your.institutional.email.address)'
+__appname__ = 'test_control_flow.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
 __version__ = '0.0.1'
+__license__ = "License for this code/program"
 
 import sys
 import doctest # Import the doctest module
@@ -31,15 +33,15 @@ def even_or_odd(x=0):
         return "%d is Even!" % x
     return "%d is Odd!" % x
 
-####### I SUPPRESSED THIS BLOCK: WHY? #######
+###### I SUPPRESSED THIS BLOCK: WHY? #######
 
-# def main(argv): 
-    # print even_or_odd(22)
-    # print even_or_odd(33)
-    # return 0
+def main(argv): 
+    print even_or_odd(22)
+    print even_or_odd(33)
+    return 0
 
-# if (__name__ == "__main__"):
-    # status = main(sys.argv)
-#############################################
+if (__name__ == "__main__"):
+    status = main(sys.argv)
+############################################
     
-doctest.testmod()   # To run with embedded tests
+# doctest.testmod()   # To run with embedded tests

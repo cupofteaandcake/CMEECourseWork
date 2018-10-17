@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-"""This script creates a dictionary called taxa_dic, in which the species in taxa are organised into sets based on their taxa"""
+"""This script creates a dictionary called taxa_dic, 
+in which the species in taxa are organised into sets based on their taxa"""
 
 __appname__ = 'dictionary.py'
 __author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'

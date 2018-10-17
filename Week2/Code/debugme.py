@@ -1,3 +1,12 @@
+#!/usr/bin/env python3
+
+"""Script to try how to use pdb on"""
+
+__appname__ = 'debugme.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 def createabug(x):
     y = x**4
     z = 0.

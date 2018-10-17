@@ -1,4 +1,11 @@
-## Finds just the taxa that are oak trees from a list of species
+#!/usr/bin/env python3
+
+"""This script finds just the species in taxa that are oaks"""
+
+__appname__ = 'basic_io.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
 
 taxa = ['Quercus robur', 
         'Fraxinus excelsior',

@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+
+"""This script reads a file containing species data and prints it row by row,
+and then writes a file containing only the name & body mass of species"""
+
+__appname__ = 'basic_csv.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
+## imports
 import csv
 
 #Read a file containing:

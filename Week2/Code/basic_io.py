@@ -1,3 +1,13 @@
+#!/usr/bin/env python3
+
+"""Script to display the file input, file output
+and storing objects capabilities of python"""
+
+__appname__ = 'basic_io.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code/program"
+
 ###############################
 # FILE INPUT
 ###############################

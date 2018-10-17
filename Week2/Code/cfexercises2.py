@@ -14,14 +14,14 @@ import sys #module to interface our program with the OS
 
 ## functions ##
 def foo1(x):
-    return x ** 0.5
+    return x ** 0.5 #x to the power of 0.5
 
 def foo2(x,y):
     if x > y:
         return x
     return y
 
-def foo3(x, y, z):
+def foo3(x, y, z): #rearranges list of vectors
     if x > y:
         tmp = y
         y = x
@@ -38,10 +38,17 @@ def foo4(x):
         result = result * i
     return result
 
-def foo5(x): #recursive function
+def foo5(x): #recursive function to calculate the factorial of x
     if x == 1:
         return 1
     return x * foo5(x - 1)
+
+def foo6(x): #Calculate the factorial of x in a different way
+    facto = 1
+    while x >= 1:
+        facto = facto * x
+        x = x - 1
+    return facto
 
 def main(argv):
     print(foo1(10))
