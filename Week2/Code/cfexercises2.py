@@ -13,15 +13,18 @@ import sys #module to interface our program with the OS
 ## constrants ##
 
 ## functions ##
-def foo1(x):
-    return x ** 0.5 #x to the power of 0.5
+def foo_1(x):
+    """returns x to the power of 0.5"""
+    return x ** 0.5
 
-def foo2(x,y):
+def foo_2(x,y):
+    """returns the greater number from x and y"""
     if x > y:
         return x
     return y
 
-def foo3(x, y, z): #rearranges list of vectors
+def foo_3(x, y, z):
+    """rearranges the list of vectors"""
     if x > y:
         tmp = y
         y = x
@@ -32,18 +35,21 @@ def foo3(x, y, z): #rearranges list of vectors
         y = tmp
     return [x, y, z]
 
-def foo4(x):
+def foo_4(x):
+    """returns the square of x"""
     result = 1
     for i in range(1, x + 1):
         result = result * i
     return result
 
-def foo5(x): #recursive function to calculate the factorial of x
+def foo_5(x):
+    """returns factorial of x recursively"""
     if x == 1:
         return 1
-    return x * foo5(x - 1)
+    return x * foo_5(x - 1)
 
-def foo6(x): #Calculate the factorial of x in a different way
+def foo_6(x):
+    """returns factorial of x in a different way"""
     facto = 1
     while x >= 1:
         facto = facto * x
@@ -51,18 +57,19 @@ def foo6(x): #Calculate the factorial of x in a different way
     return facto
 
 def main(argv):
-    print(foo1(10))
-    print(foo1(36))
-    print(foo2(5,1))
-    print(foo2(1,10))
-    print(foo3(2,1,4))
-    print(foo3(1,3,6))
-    print(foo3(7,3,1))
-    print(foo3(8,9,4))
-    print(foo4(6))
-    print(foo4(3))
-    print(foo5(6))
-    print(foo5(3))
+    """main entry point of the program"""
+    print(foo_1(10))
+    print(foo_1(36))
+    print(foo_2(5,1))
+    print(foo_2(1,10))
+    print(foo_3(2,1,4))
+    print(foo_3(1,3,6))
+    print(foo_3(7,3,1))
+    print(foo_3(8,9,4))
+    print(foo_4(6))
+    print(foo_4(3))
+    print(foo_5(6))
+    print(foo_5(3))
     return 0
 
 if __name__ == "__main__":

@@ -40,6 +40,7 @@ def is_an_oak(name):
         return word.lower().startswith('quercus')
 
 def main(argv): 
+    """main entry point of the program"""
     f = open('../Data/TestOaksData.csv','r')
     g = open('../Data/JustOaksData.csv','w')
     taxa = csv.reader(f)

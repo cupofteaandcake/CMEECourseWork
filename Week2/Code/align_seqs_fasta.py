@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-"""A python script which finds the best alignment of two DNA sequences which are """
+"""A python script which finds the best alignment of two DNA sequences which are provided in a FASTA format"""
 
 __appname__ = 'align_seqs_fasta.py'
 __author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
@@ -11,10 +11,8 @@ __license__ = "License for this code"
 import csv
 import sys
 
-# function that computes a score
-# by returning the number of matches 
-# starting from arbitrary startpoint
 def calculate_score(s1, s2, l1, l2, startpoint):
+    """function that computes a score by returning the number of matches starting from arbitrary startpoint"""
     # startpoint is the point at which we want to start
     matched = "" # contains string for alignement
     score = 0

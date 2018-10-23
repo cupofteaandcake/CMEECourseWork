@@ -23,10 +23,18 @@ print(system.time(stochrick(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=1
 # Now write another function called stochrickvect that vectorizes the above 
 # to the extent possible, with improved performance: 
 
-stochrickvect <- function(){
-
+stochrickvect <- function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100) {
+  
+  N<-matrix(NA,numyears,length(p0))
+  N[1,]<-p0
+  
+  #can remove outer loop as R naturally iterates through each column when it runs the row
+  func <- for (yr in 2:numyears)
+  {
+    N[yr,] <- N[yr-1,]*exp(r*(1-N[yr-1,]/K)+rnorm(1000,0,sigma))
+  }
+  return(N)
 }
 
-# print("Vectorized Stochastic Ricker takes:")
-# print(system.time(res2<-stochrickvect()))
-
+print("Vectorized Stochastic Ricker takes:")
+print(system.time(res2<-stochrickvect()))

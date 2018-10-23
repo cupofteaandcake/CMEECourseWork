@@ -8,6 +8,7 @@ __version__ = '0.0.1'
 __license__ = "License for this code/program"
 
 def createabug(x):
+    """creates a bug"""
     y = x**4
     z = 0.
     #import ipdb; ipdb.set_trace()

@@ -34,10 +34,8 @@ else:
     s2 = seq1
     l1, l2 = l2, l1 # swap the two lengths
 
-# function that computes a score
-# by returning the number of matches 
-# starting from arbitrary startpoint
 def calculate_score(s1, s2, l1, l2, startpoint):
+    """function that computes a score by returning the number of matches starting from arbitrary startpoint"""
     # startpoint is the point at which we want to start
     matched = "" # contains string for alignement
     score = 0
