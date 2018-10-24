@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 ## Comparing the time is takes to loop something instead of using a vector approach to computing
 
 M <- matrix(runif(1000000),1000,1000)

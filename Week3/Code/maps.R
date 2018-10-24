@@ -1,9 +1,12 @@
+#!/usr/bin/env Rscript
 require(maps)
 
 load('../Data/GPDDFiltered.RData')
 
-GPDDMap <- map(database = 'world')
-points(gpdd$long, gpdd$lat, pch = 19, col = 'indianred1', cex=0.5)
+pdf('../Results/GPDDmap.pdf')
+GPDDMap <- map(database = 'world', fill = TRUE, col = c('lightcyan', 'rosybrown1'))
+points(gpdd$long, gpdd$lat, pch = 19, col = 'indianred1', cex=0.4)
+graphics.off()
 
 #The vast majority of the points included in the GPDD data are
 #located in North America and Europe, with only one point in

@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 # Runs the stochastic (with gaussian fluctuations) Ricker Eqn .
 
 rm(list=ls())

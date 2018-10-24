@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 # A simple script to illustrate R input-output
 
 MyData <- read.csv("../Data/trees.csv", header = TRUE) #import with headers

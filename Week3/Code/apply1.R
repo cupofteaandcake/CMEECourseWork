@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 ## apply: applying the same function to rows/columns of a matrix
 
 ## build a random matrix

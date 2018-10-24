@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 SomeOperation <- function(v){
     if (sum(v) > 0){
         return (v * 100)

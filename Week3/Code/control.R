@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 ## Some code exemplifying control flow constructs in R
 
 ## If statement

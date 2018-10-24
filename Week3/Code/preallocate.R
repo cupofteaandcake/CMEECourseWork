@@ -1,3 +1,4 @@
+#!/usr/bin/env Rscript
 no_allocate <- function(a){
     a <- NA
     for (i in 1:1000000) {
