@@ -22,4 +22,14 @@
 # DataWrang.R, which wrangles data into a more managable/computable format
 # DataWrangTidy.R, which wrangles using dplyr/tidyr instead of reshape2
 # SQLinR.R, which writes a SendQuery
+# PP_Lattice.R, which produces pdf lattice graphs and calculates a csv file of mean 
+# and median values
+# Girko.R, which plots a simulation of Girko's circular law
+# plotLin.R, which plots a linear regression and then annotates the plot
+# PP_Regress.R, which plots a recreation of Samraat's graph and 
+# calculates the results of analysis of each linear regression in the graph
+# PP_Regress_loc.R, which calculates the results of analysis of each linear 
+# regression when location is added to PP_Regress.R as an
+# additional variable by which to subset the data
+# MyBars.R, which produces a stacked, annotated histogram
 #
