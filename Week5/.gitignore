@@ -1,4 +1,7 @@
 /Code/* 
 /Data/* 
-/Results/* 
-/Sandbox/*
+/Results/*
+
+!/Code/.gitkeep
+!/Data/.gitkeep 
+!/Results/.gitkeep
