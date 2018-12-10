@@ -1,15 +1,18 @@
 #!/usr/bin/env Rscript
 
-## Script that produces a stacked, annotated histogram
+# Script that produces a stacked, annotated histogram
 
-# appname = MyBars.R
-# author = Talia Al-Mushadani
-# version = 0.0.1
-# license = license for this code
+# __appname__ = MyBars.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
 
 rm(list=ls())
+graphics.off()
 
-a <- read.table("../data/Results.txt", header = TRUE)
+require(ggplot2)
+
+a <- read.table("../Data/Results.txt", header = TRUE)
 head(a)
 
 a$ymin <- rep(0, dim(a)[1]) # append a column of zeros

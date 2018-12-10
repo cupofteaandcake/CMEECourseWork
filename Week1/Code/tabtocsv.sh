@@ -1,8 +1,9 @@
-#!/bin/bash
-# Author: Your name you.login@imperial.ac.uk
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
 # Script: tabtocsv.sh
-# Desc: substitute the tabs in the files with commas
-# saves the output into a .csv file
+# Desc: substitute the tabs in the files with commas saves the output into 
+# a .csv file
 # Arguments: 1-> tab delimited file
 # Date: Oct 2018
 

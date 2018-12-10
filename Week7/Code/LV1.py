@@ -26,7 +26,9 @@ r = 1.
 a = 0.1 
 z = 1.5
 e = 0.75
+
 t = sc.linspace(0, 15,  1000)
+
 R0 = 10
 C0 = 5 
 RC0 = sc.array([R0, C0]) 
@@ -41,7 +43,7 @@ p.legend(loc='best')
 p.xlabel('Time')
 p.ylabel('Population density')
 p.title('Consumer-Resource population dynamics')
-f1.savefig('../Results/LV_model.pdf')
+f1.savefig('../Results/LV1_model.pdf')
 
 # Phase Plot script
 
@@ -51,4 +53,4 @@ p.grid()
 p.xlabel('Resource density')
 p.ylabel('Consumer density')
 p.title('Consumer-Resource population dynamics')
-f2.savefig('../Results/phase_plot.pdf')
+f2.savefig('../Results/LV1_phase_plot.pdf')

@@ -1,4 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: CompileLaTeX.sh
+# Desc: compiles latex & .bib file into .pdf
+# Arguments: .tex file & .bib file
+# Date: Oct 2018
+
 pdflatex $1.tex
 bibtex $1
 pdflatex $1.tex

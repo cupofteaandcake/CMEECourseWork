@@ -4,16 +4,18 @@
 ## calculates the results of analysis of each linear 
 ## regression in the graph
 
-# appname = PP_Regress.R
-# author = Talia Al-Mushadani
-# version = 0.0.1
-# license = license for this code
+# __appname__ = PP_Regress.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
 
 rm(list = ls())
-require(ggplot2)
+graphics.off()
+
+require(plyr)
 require(dplyr)
 require(tidyr)
-require(plyr)
+require(ggplot2)
 
 #reads csv
 MyDF <- read.csv('../Data/EcolArchives-E089-51-D1.csv')

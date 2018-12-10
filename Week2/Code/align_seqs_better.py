@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 
-"""A python script which finds the best alignment of two DNA sequences"""
+"""A python script which finds the best alignment of two DNA sequences, and save all best alignments"""
 
-__appname__ = 'align_seqs.py'
+__appname__ = 'align_seqs_better.py'
 __author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
 __version__ = '0.0.1'
 __license__ = "License for this code"
 
 # These are the two sequences to match
 import csv
+import scipy as sc
 
 f = open('../Data/sample_seqs.csv', 'r')
 
@@ -49,35 +50,30 @@ def calculate_score(s1, s2, l1, l2, startpoint):
                 matched = matched + "-"
 
     # build some formatted output
-    print("." * startpoint + matched)        
-    print("." * startpoint + s2)
-    print(s1)
-    print(score)
-    print("")
+    # print("." * startpoint + matched)        
+    # print("." * startpoint + s2)
+    # print(s1)
+    # print(score)
+    # print("")
 
     return score
-
-calculate_score(s1, s2, l1, l2, 0)
-calculate_score(s1, s2, l1, l2, 1)
-calculate_score(s1, s2, l1, l2, 5)
 
 # now try to find the best match (highest score)
 my_best_align = None
 my_best_score = -1
+best_matches = []
 
 for i in range(l1):
     z = calculate_score(s1, s2, l1, l2, i)
-    if z > my_best_score:
+    if z >= my_best_score:
         my_best_align = "." * i + s2
         my_best_score = z
+        best_matches.append(i)
+     
 
-print(my_best_align)
-print(s1)
-print(my_best_score)
-
-g = open("../Results/best_alignment.txt", 'w')
-csvwrite = csv.writer(g)
-csvwrite.writerow([my_best_align])
-csvwrite.writerow([s1])
-csvwrite.writerow([my_best_score])
+g = open("../Results/best_alignment_better.txt", 'w')
+for i in best_matches:
+    print("." * i + s2, file = g)
+    print(s1, file = g)
+    print(calculate_score(s1, s2, l1, l2, i), file = g)
 g.close()

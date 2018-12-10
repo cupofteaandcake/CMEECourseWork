@@ -1,3 +1,15 @@
+#!/usr/bin/env Rscript
+
+# illustrates how to use SQL through R
+
+# __appname__ = SQLinR.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
 #install the sqlite package
 install.packages('sqldf')
 

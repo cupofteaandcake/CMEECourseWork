@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-#This script is to extract the names of files and directories that match
-#a certain naming pattern
+"""This script is to extract the names of files and 
+directories that match a certain naming pattern"""
 
 #__appname__ = 'using_os.py'
 #__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'

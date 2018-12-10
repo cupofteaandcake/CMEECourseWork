@@ -1,6 +1,14 @@
 #!/usr/bin/env Rscript
 ## Some code exemplifying control flow constructs in R
 
+# __appname__ = control.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
 ## If statement
 a <- TRUE
 if (a == TRUE){
@@ -35,7 +43,7 @@ for (i in v1){
 
 # While loop
 i <- 0
-while (i<100){
-    i <- i+if
+while (i < 100){
+    i <- i + 1
     print(i^2)
 }

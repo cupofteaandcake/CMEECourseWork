@@ -1,3 +1,15 @@
+#!/usr/bin/env Rscript
+
+#Script that demonstrates the usage of browse for debugging
+
+# __appname__ = browse.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
 Exponential <- function(N0 = 1, r = 1, generations = 10){
     # Runs a simulation of exponential growth
     # Returns a vector of length generations
@@ -12,4 +24,4 @@ Exponential <- function(N0 = 1, r = 1, generations = 10){
     return(N)
 }
 
-plot(Exponential(), type="1", main="Exponential growth")
+plot(Exponential(), type="l", main="Exponential growth")

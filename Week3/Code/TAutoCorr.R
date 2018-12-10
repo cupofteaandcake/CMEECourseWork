@@ -1,4 +1,15 @@
 #!/usr/bin/env Rscript
+
+#produces graph & p-value for correlation between temperatures independent of year
+
+# __appname__ = TAutoCorr.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
 load('../Data/KeyWestAnnualMeanTemperature.RData')
 head(ats); tail(ats)
 str(ats)

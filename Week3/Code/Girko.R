@@ -1,13 +1,16 @@
 #!/usr/bin/env Rscript
 
-## Script that plots a simulation of Girko's circular law
+# Script that plots a simulation of Girko's circular law
 
-# appname = Girko.R
-# author = Talia Al-Mushadani
-# version = 0.0.1
-# license = license for this code
+# __appname__ = Girko.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
 
 rm(list = ls())
+graphics.off()
+
+require(ggplot2)
 
 build_ellipse <- function(hradius, vradius){ # function that returns an ellipse
   npoints = 250

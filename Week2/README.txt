@@ -3,6 +3,7 @@
 # The python scripts contained within the Code directory include:
 # align_seqs_fasta.py, which finds the best alignment of two DNA sequences which
 # are provided in a FASTA format
+# align_seqs_better.py, which finds the best alignments of two DNA sequences
 # align_seqs.py, which finds the best alignment of two DNA sequences
 # basic_csv.py, which reads a csv and extracts certain information into a
 # separate csv file

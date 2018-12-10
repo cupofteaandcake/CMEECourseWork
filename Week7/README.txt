@@ -11,6 +11,10 @@
 # LV1.py, which produces two graphs based on Lotka-Volterra model
 # LV2.py, which produces two graphs based on Lotka-Volterra model using 
 # values from command line
+# LV3.py, which produces two graphs based on discrete-time Lotka-Volterra model 
+# with pred-prey density dependence
+# LV4.py, which produces two graphs based on discrete-time Lotka-Volterra model 
+# with pred-prey density dependence and random gaussian fluctuations
 # Nets.R, which produces a network based on QMEE data
 # profileme.py, which illustrates how to profile python scripts
 # profileme2.py, which illustrates how to optimise python scripts

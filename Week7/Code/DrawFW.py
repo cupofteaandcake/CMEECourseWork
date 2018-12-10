@@ -14,8 +14,7 @@ import matplotlib.pyplot as p
 
 ##functions##
 def GenRdmAdjList(N = 2, C = 0.5): #N is no. of species & C is connectance (probabilty)
-    """ 
-    """
+    """Produces random adjacentcy list"""
     Ids = range(N)
     ALst = []
     for i in Ids:

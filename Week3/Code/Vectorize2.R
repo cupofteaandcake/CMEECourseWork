@@ -1,9 +1,15 @@
 #!/usr/bin/env Rscript
 # Runs the stochastic (with gaussian fluctuations) Ricker Eqn .
 
-rm(list=ls())
+# __appname__ = Vectorize2.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
 
-stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)
+rm(list=ls())
+graphics.off()
+
+stochrick<-function(p0=runif(1000, .5, 1.5), r=1.2, K=1, sigma=0.2, numyears=100)
 {
   #initialize
   N<-matrix(NA,numyears,length(p0))
@@ -19,13 +25,14 @@ stochrick<-function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)
  return(N)
 }
 plot(stochrick())
+print("Unvectorised stochastic Ricker model takes:")
 print(system.time(stochrick(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100)))
 
 # Now write another function called stochrickvect that vectorizes the above 
 # to the extent possible, with improved performance: 
 
 stochrickvect <- function(p0=runif(1000,.5,1.5),r=1.2,K=1,sigma=0.2,numyears=100) {
-  
+  #vectorised stochastic Ricker eqn
   N<-matrix(NA,numyears,length(p0))
   N[1,]<-p0
   

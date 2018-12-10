@@ -34,7 +34,7 @@ def calculate_score(s1, s2, l1, l2, startpoint):
     
     return score
 
-def main(argv):
+def main(argv=sys.argv):
     """ Main entry point of the program """
     if len(sys.argv) > 1:
         input_fasta1 = "../Data/%s" %sys.argv[1]
@@ -92,7 +92,7 @@ def main(argv):
     print(s1)
     print(my_best_score)
 
-    g = open("../Data/best_alignment_fasta.txt", 'w')
+    g = open("../Results/best_alignment_fasta.txt", 'w')
     csvwrite = csv.writer(g)
     csvwrite.writerow([my_best_align])
     csvwrite.writerow([s1])
@@ -102,4 +102,4 @@ def main(argv):
 if __name__ == "__main__": 
     """Makes sure the "main" function is called from command line"""  
     status = main(sys.argv)
-    sys.exit(status)
+    sys.exit("Exiting Script")

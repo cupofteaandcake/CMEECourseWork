@@ -1,5 +1,14 @@
 #!/usr/bin/env Rscript
-## apply: applying the same function to rows/columns of a matrix
+
+# illustrating apply which applies the same function to rows/columns of a matrix
+
+# __appname__ = apply1.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
 
 ## build a random matrix
 M <- matrix(rnorm(100), 10, 10)

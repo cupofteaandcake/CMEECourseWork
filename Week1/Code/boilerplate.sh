@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Author: Your Name your.login@imperial.ac.uk
 # Script: boilerplate.sh
 # Desc: simple boilerplate for shell scripts

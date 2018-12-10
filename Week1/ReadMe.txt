@@ -9,3 +9,4 @@
 # ConcatenateTwoFiles.sh, joins together two separate files sequently
 # tiff2png.sh, converts tiff image files into png image files
 # CompileLaTeX.sh, adds bibliography to LaTeX pdfs
+# csvtospace.sh, converts commas in csv to spaces

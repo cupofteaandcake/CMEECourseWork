@@ -1,13 +1,16 @@
 #!/usr/bin/env Rscript
 
-## Script that plots a linear regression and then annotates the plot
+# Script that plots a linear regression and then annotates the plot
 
-# appname = plotLin.R
-# author = Talia Al-Mushadani
-# version = 0.0.1
-# license = license for this code
+# __appname__ = plotLin.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
 
 rm(list = ls())
+graphics.off()
+
+require(ggplot2)
 
 x <- seq(0, 100, by = 0.1)
 y <- -4. + 0.25 * x +

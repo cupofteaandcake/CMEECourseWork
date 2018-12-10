@@ -1,4 +1,15 @@
 #!/usr/bin/env Rscript
+
+#produces map with GPDD data plotted on it
+
+# __appname__ = maps.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
 require(maps)
 
 load('../Data/GPDDFiltered.RData')

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script: csvtospace.sh
 # Desc: substitute the commas in the files with spaces
 # saves the output into a space-separated text file

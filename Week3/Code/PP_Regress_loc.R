@@ -4,16 +4,18 @@
 ## regression when location is added to PP_Regress.R as an
 ## additional variable by which to subset the data
 
-# appname = PP_Regress_loc.R
-# author = Talia Al-Mushadani
-# version = 0.0.1
-# license = license for this code
+# __appname__ = PP_Regress_loc.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
 
 rm(list = ls())
+graphics.off()
+
+require(plyr)
 require(ggplot2)
 require(dplyr)
 require(tidyr)
-require(plyr)
 
 #read csv in to R
 MyDF <- read.csv('../Data/EcolArchives-E089-51-D1.csv')

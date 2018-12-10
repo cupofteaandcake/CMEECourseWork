@@ -1,3 +1,17 @@
+#!/usr/bin/env Rscript
+
+# Script showing how to plot graphs in R
+
+# __appname__ = How_to_plot.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
+require(ggplot2)
+
 MyDF <- read.csv("../Data/EcolArchives-E089-51-D1.csv")
 dim(MyDF)
 plot(MyDF$Predator.mass, MyDF$Prey.mass)
@@ -40,7 +54,6 @@ legend('topleft',c('Predators','Prey'), # Add legend
        fill=c(rgb(1, 0, 0, 0.5), rgb(0, 0, 1, 0.5))) 
 graphics.off(); #you can also use dev.off()
 
-require(ggplot2)
 qplot(Prey.mass, Predator.mass, data = MyDF)
 qplot(log(Prey.mass), log(Predator.mass), data = MyDF)
 qplot(log(Prey.mass), log(Predator.mass), data = MyDF, colour = Type.of.feeding.interaction)

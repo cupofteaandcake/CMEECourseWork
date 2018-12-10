@@ -1,4 +1,15 @@
 #!/usr/bin/env Rscript
+
+# illustrates wrangling csv data using Tidyr & Dplyr (Tidyverse packages)
+
+# __appname__ = DataWrangTidy.R
+# __author__ = Talia Al-Mushadani
+# __version__ = 0.0.1
+# __license__ = license for this code
+
+rm(list = ls())
+graphics.off()
+
 ################################################################
 ################## Wrangling the Pound Hill Dataset using dplyr ############
 ################################################################
@@ -8,9 +19,9 @@ require(dplyr)
 require(tidyr)
 
 # header = true because we do have metadata headers
-MyMetaData <- read.csv("../data/PoundHillMetaData.csv",header = T, sep=";", stringsAsFactors = F)
+MyMetaData <- read.csv("../Data/PoundHillMetaData.csv",header = T, sep=";", stringsAsFactors = F)
 
-MyData <- as.matrix(read.csv("../data/PoundHillData.csv",header = F))
+MyData <- as.matrix(read.csv("../Data/PoundHillData.csv",header = F))
 
 MyData <- t(MyData)
 MyData[MyData == ""] = 0
