@@ -9,11 +9,11 @@ Note that:
 
 ======================================================================
 ======================================================================
-Your Git repo size this week is about 187.54 KiB on disk 
+Your Git repo size this week is about 1.11 MiB on disk 
 
 PART 1: Checking project workflow...
 
-Found the following directories in parent directory: Week1, Assessment, Week2, .git
+Found the following directories in parent directory: Week6, Week1, Week7, Assessment, Week5, Week2, Week4, .git, Week3
 
 Found the following files in parent directory: README.txt, .gitignore
 
@@ -186,7 +186,59 @@ dmypy.json
 [Ll]ocal
 [Ss]cripts
 pyvenv.cfg
-pip-selfcheck.json**********************************************************************
+pip-selfcheck.json
+
+### R ###
+# History files
+.Rhistory
+.Rapp.history
+
+# Session Data files
+.RData
+
+# Example code in package build process
+*-Ex.R
+
+# Output files from R CMD build
+/*.tar.gz
+
+# Output files from R CMD check
+/*.Rcheck/
+
+# RStudio files
+.Rproj.user/
+
+# produced vignettes
+vignettes/*.html
+vignettes/*.pdf
+
+# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
+.httr-oauth
+
+# knitr and R markdown default cache directories
+/*_cache/
+/cache/
+
+# Temporary files created by R markdown
+*.utf8.md
+*.knit.md
+
+# Shiny token, see https://shiny.rstudio.com/articles/shinyapps.html
+rsconnect/
+
+### R.Bookdown Stack ###
+# R package: bookdown caching files
+/*_files/
+
+## TheMulQuaBioClone
+/TheMulQuaBio
+
+## Seminar Notes
+/SeminarNotes
+
+## Week 8 & 9
+/Week8
+/Week9**********************************************************************
 
 Found README in parent directory, named: README.txt
 
@@ -199,7 +251,7 @@ Do I like this better?
 ======================================================================
 Looking for the weekly directories...
 
-Found 2 weekly directories: Week1, Week2
+Found 7 weekly directories: Week1, Week2, Week3, Week4, Week5, Week6, Week7
 
 The Week1 directory will be assessed 
 
@@ -210,7 +262,7 @@ PART 2: Checking weekly code and workflow...
 ======================================================================
 Assessing WEEK1...
 
-Found the following directories: Code, Data, Sandbox, Results
+Found the following directories: Code, Sandbox
 
 Found the following files: ReadMe.txt
 
@@ -230,15 +282,16 @@ Printing contents of ReadMe.txt:
 # CountLines.sh, counts the number of lines in a file
 # ConcatenateTwoFiles.sh, joins together two separate files sequently
 # tiff2png.sh, converts tiff image files into png image files
-# CompileLaTeX.sh, adds bibliography to LaTeX pdfs**********************************************************************
+# CompileLaTeX.sh, adds bibliography to LaTeX pdfs
+# csvtospace.sh, converts commas in csv to spaces**********************************************************************
 
-Found following files in results directory: ...
-Found 13 code files: ConcatenateTwoFiles.sh, CompileLaTex.sh, .txt, CountLines.sh, variables.sh, tiff2png.sh, csvtospace.sh, FirstExample.tex, MyExampleScript.sh, FirstBiblio.bib, UnixPrac1.txt, tabtocsv.sh, boilerplate.sh
+Data directory missing!
 
-Found the following extra files: FirstExample.blg, FirstExample.bbl, FirstExample.pdf
-0.5 pt deducted per extra file
+Results directory missing!
 
-Current Points = 98.5
+Creating Results directory...
+
+Found 12 code files: ConcatenateTwoFiles.sh, CompileLaTex.sh, CountLines.sh, variables.sh, tiff2png.sh, csvtospace.sh, FirstExample.tex, MyExampleScript.sh, FirstBiblio.bib, UnixPrac1.txt, tabtocsv.sh, boilerplate.sh
 
 ======================================================================
 Testing script/code files...
@@ -248,7 +301,14 @@ Inspecting script file ConcatenateTwoFiles.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: ConcatenateTwoFiles.sh
+# Desc: script to merge two files together
+# Arguments: two file names
+# Date: Oct 2018
+
 cat $1 > $3
 cat $2 >> $3
 echo "Merged File is"
@@ -264,15 +324,22 @@ Merged File is
 **********************************************************************
 
 Encountered error:
-ConcatenateTwoFiles.sh: line 2: $3: ambiguous redirect
-ConcatenateTwoFiles.sh: line 3: $3: ambiguous redirect
+ConcatenateTwoFiles.sh: line 9: $3: ambiguous redirect
+ConcatenateTwoFiles.sh: line 10: $3: ambiguous redirect
 
 ======================================================================
 Inspecting script file CompileLaTex.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: CompileLaTeX.sh
+# Desc: compiles latex & .bib file into .pdf
+# Arguments: .tex file & .bib file
+# Date: Oct 2018
+
 pdflatex $1.tex
 bibtex $1
 pdflatex $1.tex
@@ -322,46 +389,44 @@ rm: cannot remove '*.out': No such file or directory
 rm: cannot remove '*.snm': No such file or directory
 rm: cannot remove '*.toc': No such file or directory
 
-** (evince:27217): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2018-19/Coursework/StudentRepos/TaliaAl-Mushadani_TA1915/Week1/Code/.pdf': No such file or directory
+** (evince:11816): WARNING **: Error when getting information for file '/home/mhasoba/Documents/Teaching/IC_CMEE/2018-19/Coursework/StudentRepos/TaliaAl-Mushadani_TA1915/Week1/Code/.pdf': No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
-** (evince:27217): WARNING **: Error setting file metadata: No such file or directory
-
-======================================================================
-Inspecting script file .txt...
-
-File contents are:
-**********************************************************************
-**********************************************************************
-
-Testing .txt...
+** (evince:11816): WARNING **: Error setting file metadata: No such file or directory
 
 ======================================================================
 Inspecting script file CountLines.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
-NumLines=`wc -l < $1`
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: CountLines.sh
+# Desc: script to count lines in a file
+# Arguments: file name
+# Date: Oct 2018
+
+NumLines = `wc -l < $1`
 echo "The file $1 has $NumLines lines"
 echo**********************************************************************
 
@@ -376,14 +441,22 @@ The file  has  lines
 **********************************************************************
 
 Encountered error:
-CountLines.sh: line 2: $1: ambiguous redirect
+CountLines.sh: line 9: $1: ambiguous redirect
+CountLines.sh: line 9: NumLines: command not found
 
 ======================================================================
 Inspecting script file variables.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: variables.sh
+# Desc: illustrate the uses of variables in bash scripts
+# Arguments: variables
+# Date: Oct 2018
+
 # Shows the use of variables
 MyVar='some string'
 echo 'the current value of the variable is' $MyVar
@@ -419,7 +492,13 @@ Inspecting script file tiff2png.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: tiff2png.sh
+# Desc: script to convert .tiff file to a .png file
+# Arguments: .tif file
+# Date: Oct 2018
 
 for f in *.tif; 
     do  
@@ -445,7 +524,7 @@ Inspecting script file csvtospace.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
+#!/usr/bin/env bash
 # Script: csvtospace.sh
 # Desc: substitute the commas in the files with spaces
 # saves the output into a space-separated text file
@@ -468,34 +547,37 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00881s
+Time consumed = 0.00568s
 
 ======================================================================
 Inspecting script file FirstExample.tex...
 
 File contents are:
 **********************************************************************
-\documentclass[12pt]{article} \title{A Simple Document} \author{Your Name} \date{}
+\documentclass[12pt]{article} 
+\title{A Simple Document} 
+\author{Your Name} 
+\date{}
 \begin{document}
-\maketitle
+  \maketitle
   
-\begin{abstract}
+  \begin{abstract}
     This paper must be cool!
-\end{abstract}
+  \end{abstract}
   
-\section{Introduction}
+  \section{Introduction}
     Blah Blah!
   
-\section{Materials \& Methods}
-  One of the most famous equations is:
-  \begin{equation}
-    E = mc^2
-  \end{equation}
-  This equation was first proposed by Einstein in 1905 
-  \cite{einstein1905does}.
+  \section{Materials \& Methods}
+    One of the most famous equations is:
+    \begin{equation}
+      E = mc^2
+    \end{equation}
+    This equation was first proposed by Einstein in 1905 
+    \cite{einstein1905does}.
   
-\bibliographystyle{plain}
-\bibliography{FirstBiblio}
+  \bibliographystyle{plain}
+  \bibliography{FirstBiblio}
 \end{document}**********************************************************************
 
 Testing FirstExample.tex...
@@ -505,7 +587,14 @@ Inspecting script file MyExampleScript.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
+# Script: MyExampleScript.sh
+# Desc: illustrate basic usage of bash
+# Arguments:
+# Date: Oct 2018
+
 msg1="Hello"
 msg2=$USER
 echo "$msg1 $msg2"
@@ -525,7 +614,7 @@ Hello mhasoba
 
 Code ran without errors
 
-Time consumed = 0.00643s
+Time consumed = 0.00542s
 
 ======================================================================
 Inspecting script file FirstBiblio.bib...
@@ -562,11 +651,12 @@ Inspecting script file tabtocsv.sh...
 
 File contents are:
 **********************************************************************
-#!/bin/bash
-# Author: Your name you.login@imperial.ac.uk
+#!/usr/bin/env bash
+
+# Author: Talia Al-Mushadani (ta1915@imperial.ac.uk)
 # Script: tabtocsv.sh
-# Desc: substitute the tabs in the files with commas
-# saves the output into a .csv file
+# Desc: substitute the tabs in the files with commas saves the output into 
+# a .csv file
 # Arguments: 1-> tab delimited file
 # Date: Oct 2018
 
@@ -587,7 +677,7 @@ Done!
 
 Code ran without errors
 
-Time consumed = 0.00756s
+Time consumed = 0.00686s
 
 ======================================================================
 Inspecting script file boilerplate.sh...
@@ -595,6 +685,7 @@ Inspecting script file boilerplate.sh...
 File contents are:
 **********************************************************************
 #!/bin/bash
+
 # Author: Your Name your.login@imperial.ac.uk
 # Script: boilerplate.sh
 # Desc: simple boilerplate for shell scripts
@@ -618,7 +709,7 @@ This is a shell script!
 
 Code ran without errors
 
-Time consumed = 0.00402s
+Time consumed = 0.00305s
 
 ======================================================================
 ======================================================================
@@ -631,6 +722,6 @@ Ran into 5 errors
 
 FINISHED WEEKLY ASSESSMENT
 
-Current Points for the Week = 98.5
+Current Points for the Week = 100
 
 NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!

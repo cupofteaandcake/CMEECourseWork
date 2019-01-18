@@ -9,11 +9,11 @@ Note that:
 
 ======================================================================
 ======================================================================
-Your Git repo size this week is about 187.54 KiB on disk 
+Your Git repo size this week is about 1.11 MiB on disk 
 
 PART 1: Checking project workflow...
 
-Found the following directories in parent directory: Week1, Assessment, Week2, .git, Week3
+Found the following directories in parent directory: Week6, Week1, Week7, Assessment, Week5, Week2, Week4, .git, Week3
 
 Found the following files in parent directory: README.txt, .gitignore
 
@@ -228,7 +228,17 @@ rsconnect/
 
 ### R.Bookdown Stack ###
 # R package: bookdown caching files
-/*_files/**********************************************************************
+/*_files/
+
+## TheMulQuaBioClone
+/TheMulQuaBio
+
+## Seminar Notes
+/SeminarNotes
+
+## Week 8 & 9
+/Week8
+/Week9**********************************************************************
 
 Found README in parent directory, named: README.txt
 
@@ -241,7 +251,7 @@ Do I like this better?
 ======================================================================
 Looking for the weekly directories...
 
-Found 3 weekly directories: Week1, Week2, Week3
+Found 7 weekly directories: Week1, Week2, Week3, Week4, Week5, Week6, Week7
 
 The Week2 directory will be assessed 
 
@@ -252,7 +262,7 @@ PART 2: Checking weekly code and workflow...
 ======================================================================
 Assessing WEEK2...
 
-Found the following directories: Code, Data, Sandbox, Results
+Found the following directories: Code, Data, Sandbox
 
 Found the following files: README.txt
 
@@ -265,14 +275,42 @@ Printing contents of README.txt:
 # READ ME WEEK 2
 # This file contains the practical results of the Python 1 chapter of TheMulQuaBio handbook
 # The python scripts contained within the Code directory include:
+# align_seqs_fasta.py, which finds the best alignment of two DNA sequences which
+# are provided in a FASTA format
+# align_seqs_better.py, which finds the best alignments of two DNA sequences
+# align_seqs.py, which finds the best alignment of two DNA sequences
+# basic_csv.py, which reads a csv and extracts certain information into a
+# separate csv file
 # basic_io.py, which opens, exports and stores objects from a text file
-# basic_csv.py, which reads a csv and extracts certain information into a separate csv file
-# boilerplate.py, which is a standardised python program, which prints 'This is a boilerplate'
-# using_name.py, which highlights when a program is running by itself, or is acting as a module being imported from another program
-#**********************************************************************
+# boilerplate.py, which is a standardised python program, which prints
+# 'This is a boilerplate'
+# cfexercises1.py, which illustrates the use of for, while and if control
+# statements in python
+# cfexercises2.py, which exemplify further applications of control statements
+# control_flow.py, which exemplify the use of control statements
+# debugme.py, which illustrates how to use pdb
+# dictionary.py, which creates a dictionary called taxa_dic, in which
+# the species in taxa are organised into sets based on their taxa
+# lc1.py, which runs list comprehensions and loops for creating sets based on
+# the bird data provided
+# lc2.py, loops and list comprehensions to create lists based on the
+# Met Office data provided
+# loops.py, which illustrates the use of loops in python
+# oaks_debugme.py, which searches for oaks in a csv of tree species
+# and prints them to a new csv file
+# oaks.py, which finds just the species in taxa that are oaks
+# scope.py, which demonstrates the usability of local and global variables
+# sysargv.py, which illustrates how to use arguments in python
+# test_control_flow.py, which illustrates the use of doctests
+# tuple.py, which is a simple for loop which prints each species on a new line
+# using_name.py, which highlights when a program is running by itself,
+# or is acting as a module being imported from another program**********************************************************************
 
-Found following files in results directory: ...
-Found 20 code files: lc2.py, boilerplate.py, basic_csv.py, cfexercises2.py, dictionary.py, debugme.py, scope.py, cfexercises1.py, tuple.py, basic_io.py, lc1.py, oaks_debugme.py, oaks.py, loops.py, using_name.py, align_seqs.py, sysargv.py, align_seqs_fasta.py, control_flow.py, test_control_flow.py
+Results directory missing!
+
+Creating Results directory...
+
+Found 21 code files: lc2.py, boilerplate.py, basic_csv.py, cfexercises2.py, align_seqs_better.py, dictionary.py, debugme.py, scope.py, cfexercises1.py, tuple.py, basic_io.py, lc1.py, oaks_debugme.py, oaks.py, loops.py, using_name.py, align_seqs.py, sysargv.py, align_seqs_fasta.py, control_flow.py, test_control_flow.py
 
 ======================================================================
 Testing script/code files...
@@ -341,16 +379,16 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-set([('JAN', 111.4), ('AUG', 140.2), ('DEC', 142.2), ('FEB', 126.1), ('NOV', 128.4)])
-set(['MAR', 'SEP'])
-set([('JAN', 111.4), ('AUG', 140.2), ('DEC', 142.2), ('FEB', 126.1), ('NOV', 128.4)])
-set(['MAR', 'SEP'])
+{('DEC', 142.2), ('NOV', 128.4), ('AUG', 140.2), ('JAN', 111.4), ('FEB', 126.1)}
+{'SEP', 'MAR'}
+{('DEC', 142.2), ('NOV', 128.4), ('AUG', 140.2), ('JAN', 111.4), ('FEB', 126.1)}
+{'SEP', 'MAR'}
 
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01246s
+Time consumed = 0.02572s
 
 ======================================================================
 Inspecting script file boilerplate.py...
@@ -399,7 +437,7 @@ This is a boilerplate
 
 Code ran without errors
 
-Time consumed = 0.01249s
+Time consumed = 0.02832s
 
 ======================================================================
 Inspecting script file basic_csv.py...
@@ -456,19 +494,19 @@ Output (only first 500 characters):
 
 **********************************************************************
 ['Species', 'Infraorder', 'Family', 'Distribution', 'Body mass male (Kg)']
-('The species is', 'Species')
+The species is Species
 ['Daubentonia_madagascariensis', 'Chiromyiformes ', 'Daubentoniidae', 'Madagascar', '2.7']
-('The species is', 'Daubentonia_madagascariensis')
+The species is Daubentonia_madagascariensis
 ['Allocebus_trichotis', 'Lemuriformes', 'Cheirogaleidae', 'Madagascar', '0.1']
-('The species is', 'Allocebus_trichotis')
+The species is Allocebus_trichotis
 ['Avahi_laniger', 'Lemuriformes', 'Indridae', 'America', '1.03']
-('The species is', 'Avahi_laniger')
-['Avahi_occidentalis', 'Lemurifo
+The species is Avahi_laniger
+['Avahi_occidentalis', 'Lemuriformes', 'Indridae', 'Madagasc
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01738s
+Time consumed = 0.03145s
 
 ======================================================================
 Inspecting script file cfexercises2.py...
@@ -490,15 +528,18 @@ import sys #module to interface our program with the OS
 ## constrants ##
 
 ## functions ##
-def foo1(x):
-    return x ** 0.5 #x to the power of 0.5
+def foo_1(x):
+    """returns x to the power of 0.5"""
+    return x ** 0.5
 
-def foo2(x,y):
+def foo_2(x,y):
+    """returns the greater number from x and y"""
     if x > y:
         return x
     return y
 
-def foo3(x, y, z): #rearranges list of vectors
+def foo_3(x, y, z):
+    """rearranges the list of vectors"""
     if x > y:
         tmp = y
         y = x
@@ -509,18 +550,21 @@ def foo3(x, y, z): #rearranges list of vectors
         y = tmp
     return [x, y, z]
 
-def foo4(x):
+def foo_4(x):
+    """returns the square of x"""
     result = 1
     for i in range(1, x + 1):
         result = result * i
     return result
 
-def foo5(x): #recursive function to calculate the factorial of x
+def foo_5(x):
+    """returns factorial of x recursively"""
     if x == 1:
         return 1
-    return x * foo5(x - 1)
+    return x * foo_5(x - 1)
 
-def foo6(x): #Calculate the factorial of x in a different way
+def foo_6(x):
+    """returns factorial of x in a different way"""
     facto = 1
     while x >= 1:
         facto = facto * x
@@ -528,18 +572,19 @@ def foo6(x): #Calculate the factorial of x in a different way
     return facto
 
 def main(argv):
-    print(foo1(10))
-    print(foo1(36))
-    print(foo2(5,1))
-    print(foo2(1,10))
-    print(foo3(2,1,4))
-    print(foo3(1,3,6))
-    print(foo3(7,3,1))
-    print(foo3(8,9,4))
-    print(foo4(6))
-    print(foo4(3))
-    print(foo5(6))
-    print(foo5(3))
+    """main entry point of the program"""
+    print(foo_1(10))
+    print(foo_1(36))
+    print(foo_2(5,1))
+    print(foo_2(1,10))
+    print(foo_3(2,1,4))
+    print(foo_3(1,3,6))
+    print(foo_3(7,3,1))
+    print(foo_3(8,9,4))
+    print(foo_4(6))
+    print(foo_4(3))
+    print(foo_5(6))
+    print(foo_5(3))
     return 0
 
 if __name__ == "__main__":
@@ -554,15 +599,10 @@ cfexercises2.py is a Python script file;
 
 Found one or more doctrings!
 
-Missing docstrings in one more functions!
-.5 pt deducted per missing docstring
-
-Current Points = 92.0
-
 Output (only first 500 characters): 
 
 **********************************************************************
-3.16227766017
+3.1622776601683795
 6.0
 5
 10
@@ -579,7 +619,109 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.01564s
+Time consumed = 0.02734s
+
+======================================================================
+Inspecting script file align_seqs_better.py...
+
+File contents are:
+**********************************************************************
+#!/usr/bin/env python3
+
+"""A python script which finds the best alignment of two DNA sequences, and save all best alignments"""
+
+__appname__ = 'align_seqs_better.py'
+__author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
+__version__ = '0.0.1'
+__license__ = "License for this code"
+
+# These are the two sequences to match
+import csv
+import scipy as sc
+
+f = open('../Data/sample_seqs.csv', 'r')
+
+csvread = csv.reader(f)
+temp = []
+for row in csvread:
+    temp.append(tuple(row))
+f.close()
+
+seq2 = row[1]
+seq1 = row[0]
+
+# assign the longest sequence s1, and the shortest to s2
+# l1 is the length of the longest, l2 that of the shortest
+
+l1 = len(seq1)
+l2 = len(seq2)
+if l1 >= l2:
+    s1 = seq1
+    s2 = seq2
+else:
+    s1 = seq2
+    s2 = seq1
+    l1, l2 = l2, l1 # swap the two lengths
+
+def calculate_score(s1, s2, l1, l2, startpoint):
+    """function that computes a score by returning the number of matches starting from arbitrary startpoint"""
+    # startpoint is the point at which we want to start
+    matched = "" # contains string for alignement
+    score = 0
+    for i in range(l2):
+        if (i + startpoint) < l1:
+            # if its matching the character
+            if s1[i + startpoint] == s2[i]:
+                matched = matched + "*"
+                score = score + 1
+            else:
+                matched = matched + "-"
+
+    # build some formatted output
+    # print("." * startpoint + matched)        
+    # print("." * startpoint + s2)
+    # print(s1)
+    # print(score)
+    # print("")
+
+    return score
+
+# now try to find the best match (highest score)
+my_best_align = None
+my_best_score = -1
+best_matches = []
+
+for i in range(l1):
+    z = calculate_score(s1, s2, l1, l2, i)
+    if z >= my_best_score:
+        my_best_align = "." * i + s2
+        my_best_score = z
+        best_matches.append(i)
+     
+
+g = open("../Results/best_alignment_better.txt", 'w')
+for i in best_matches:
+    print("." * i + s2, file = g)
+    print(s1, file = g)
+    print(calculate_score(s1, s2, l1, l2, i), file = g)
+g.close()**********************************************************************
+
+Testing align_seqs_better.py...
+
+align_seqs_better.py is a Python script file;
+ checking for docstrings...
+
+Found one or more doctrings!
+
+Output (only first 500 characters): 
+
+**********************************************************************
+
+**********************************************************************
+
+Code ran without errors
+
+Time consumed = 0.13145s
 
 ======================================================================
 Inspecting script file dictionary.py...
@@ -641,13 +783,13 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-{'Rodentia': ['Gerbillus henleyi', 'Peromyscus crinitus', 'Mus domesticus', 'Cleithrionomys rutilus'], 'Afrosoricida': ['Microgale dobsoni', 'Microgale talazaci'], 'Chiroptera': ['Myotis lucifugus'], 'Carnivora': ['Lyacon pictus', 'Arctocephalus gazella', 'Canis lupus']}
+{'Afrosoricida': ['Microgale dobsoni', 'Microgale talazaci'], 'Rodentia': ['Gerbillus henleyi', 'Peromyscus crinitus', 'Mus domesticus', 'Cleithrionomys rutilus'], 'Carnivora': ['Lyacon pictus', 'Arctocephalus gazella', 'Canis lupus'], 'Chiroptera': ['Myotis lucifugus']}
 
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01755s
+Time consumed = 0.02546s
 
 ======================================================================
 Inspecting script file debugme.py...
@@ -664,6 +806,7 @@ __version__ = '0.0.1'
 __license__ = "License for this code/program"
 
 def createabug(x):
+    """creates a bug"""
     y = x**4
     z = 0.
     #import ipdb; ipdb.set_trace()
@@ -687,9 +830,9 @@ Output (only first 500 characters):
 
 Encountered error:
 Traceback (most recent call last):
-  File "debugme.py", line 17, in <module>
+  File "debugme.py", line 18, in <module>
     createabug(25)
-  File "debugme.py", line 14, in createabug
+  File "debugme.py", line 15, in createabug
     y = y/z
 ZeroDivisionError: float division by zero
 
@@ -711,6 +854,7 @@ __license__ = "License for this code/program"
 _a_global = 10
 
 def a_function():
+    """doesn't actually change the global value"""
     _a_global = 5
     _a_local = 4
     print("Inside the function, the value is ", _a_global)
@@ -725,6 +869,7 @@ print("Outside the function, the value is ", _a_global)
 _a_global = 10
 
 def a_function():
+    """changes the global value from 10 to 5"""
     global _a_global
     _a_global = 5
     _a_local = 4
@@ -745,18 +890,18 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-('Inside the function, the value is ', 5)
-('Inside the function, the value is ', 4)
-('Outside the function, the value is ', 10)
-('Inside the function, the value is ', 5)
-('Inside the function, the value is ', 4)
-('Outside the function, the value is ', 5)
+Inside the function, the value is  5
+Inside the function, the value is  4
+Outside the function, the value is  10
+Inside the function, the value is  5
+Inside the function, the value is  4
+Outside the function, the value is  5
 
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01420s
+Time consumed = 0.02893s
 
 ======================================================================
 Inspecting script file cfexercises1.py...
@@ -850,7 +995,7 @@ hello
 
 Code ran without errors
 
-Time consumed = 0.01541s
+Time consumed = 0.02797s
 
 ======================================================================
 Inspecting script file tuple.py...
@@ -906,7 +1051,7 @@ Output (only first 500 characters):
 
 Code ran without errors
 
-Time consumed = 0.01533s
+Time consumed = 0.02660s
 
 ======================================================================
 Inspecting script file basic_io.py...
@@ -1009,7 +1154,7 @@ Fourth Line
 
 Code ran without errors
 
-Time consumed = 0.01756s
+Time consumed = 0.03250s
 
 ======================================================================
 Inspecting script file lc1.py...
@@ -1072,18 +1217,18 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-set(['Junco hyemalis', 'Passerculus sandwichensis', 'Junco phaeonotus', 'Tachycineata bicolor', 'Delichon urbica'])
-set(['Savannah sparrow', 'House martin', 'Dark-eyed junco', 'Yellow-eyed junco', 'Tree swallow'])
-set([19.5, 20.2, 19, 18.7, 19.6])
-set(['Junco hyemalis', 'Passerculus sandwichensis', 'Junco phaeonotus', 'Tachycineata bicolor', 'Delichon urbica'])
-set(['Savannah sparrow', 'House martin', 'Dark-eyed junco', 'Yellow-eyed junco', 'Tree swallow'])
-set([19.5, 20.2, 19, 18.7, 19.6])
+{'Passerculus sandwichensis', 'Junco hyemalis', 'Junco phaeonotus', 'Tachycineata bicolor', 'Delichon urbica'}
+{'Yellow-eyed junco', 'Dark-eyed junco', 'Tree swallow', 'House martin', 'Savannah sparrow'}
+{19.5, 19.6, 18.7, 19, 20.2}
+{'Passerculus sandwichensis', 'Junco hyemalis', 'Junco phaeonotus', 'Tachycineata bicolor', 'Delichon urbica'}
+{'Yellow-eyed junco', 'Dark-eyed junco', 'Tree swallow', 'House martin', 'Savannah sparrow'}
+{19.5, 19.6, 18.7, 19, 20.2}
 
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01412s
+Time consumed = 0.02627s
 
 ======================================================================
 Inspecting script file oaks_debugme.py...
@@ -1132,6 +1277,7 @@ def is_an_oak(name):
         return word.lower().startswith('quercus')
 
 def main(argv): 
+    """main entry point of the program"""
     f = open('../Data/TestOaksData.csv','r')
     g = open('../Data/JustOaksData.csv','w')
     taxa = csv.reader(f)
@@ -1149,6 +1295,7 @@ def main(argv):
     return 0
     
 if (__name__ == "__main__"):
+    """Makes sure the "main" function is called from command line"""  
     status = main(sys.argv)
 
 # doctest.testmod()**********************************************************************
@@ -1194,7 +1341,7 @@ FOUND AN OAK!
 
 Code ran without errors
 
-Time consumed = 0.03898s
+Time consumed = 0.06574s
 
 ======================================================================
 Inspecting script file oaks.py...
@@ -1217,6 +1364,7 @@ taxa = ['Quercus robur',
         'Quercus petraea']
 
 def is_an_oak(name):
+    """returns name if it starts with quercus"""
     return name.lower().startswith('quercus ')
 
 ## Using for loops
@@ -1251,16 +1399,16 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-set(['Quercus robur', 'Quercus cerris', 'Quercus petraea'])
-set(['Quercus robur', 'Quercus cerris', 'Quercus petraea'])
-set(['QUERCUS ROBUR', 'QUERCUS CERRIS', 'QUERCUS PETRAEA'])
-set(['QUERCUS ROBUR', 'QUERCUS CERRIS', 'QUERCUS PETRAEA'])
+{'Quercus petraea', 'Quercus cerris', 'Quercus robur'}
+{'Quercus petraea', 'Quercus cerris', 'Quercus robur'}
+{'QUERCUS ROBUR', 'QUERCUS PETRAEA', 'QUERCUS CERRIS'}
+{'QUERCUS ROBUR', 'QUERCUS PETRAEA', 'QUERCUS CERRIS'}
 
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01419s
+Time consumed = 0.04072s
 
 ======================================================================
 Inspecting script file loops.py...
@@ -1436,7 +1584,7 @@ GERONIMO! infinite loop!
 
 Code ran without errors
 
-Time consumed = 10.60342s
+Time consumed = 10.26097s
 
 ======================================================================
 Inspecting script file using_name.py...
@@ -1453,6 +1601,7 @@ __version__ = '0.0.1'
 __license__ = "License for this code/program"
 
 if __name__ == '__main__':
+    """Makes sure the "main" function is called from command line"""
     print('This program is being run by itself')
 else:
     print('I am being imported from another module')**********************************************************************
@@ -1473,7 +1622,7 @@ This program is being run by itself
 
 Code ran without errors
 
-Time consumed = 0.08025s
+Time consumed = 0.06886s
 
 ======================================================================
 Inspecting script file align_seqs.py...
@@ -1516,10 +1665,8 @@ else:
     s2 = seq1
     l1, l2 = l2, l1 # swap the two lengths
 
-# function that computes a score
-# by returning the number of matches 
-# starting from arbitrary startpoint
 def calculate_score(s1, s2, l1, l2, startpoint):
+    """function that computes a score by returning the number of matches starting from arbitrary startpoint"""
     # startpoint is the point at which we want to start
     matched = "" # contains string for alignement
     score = 0
@@ -1559,13 +1706,12 @@ print(my_best_align)
 print(s1)
 print(my_best_score)
 
-g = open("../Data/best_alignment.txt", 'w')
+g = open("../Results/best_alignment.txt", 'w')
 csvwrite = csv.writer(g)
 csvwrite.writerow([my_best_align])
 csvwrite.writerow([s1])
 csvwrite.writerow([my_best_score])
-g.close()
-**********************************************************************
+g.close()**********************************************************************
 
 Testing align_seqs.py...
 
@@ -1633,7 +1779,7 @@ ATCGCCGGATTACGGG
 
 Code ran without errors
 
-Time consumed = 0.06015s
+Time consumed = 0.04897s
 
 ======================================================================
 Inspecting script file sysargv.py...
@@ -1664,15 +1810,15 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-('This is the name of the script:', 'sysargv.py')
-('Number of argumments:', 1)
-('The arguments are:', "['sysargv.py']")
+This is the name of the script: sysargv.py
+Number of argumments: 1
+The arguments are: ['sysargv.py']
 
 **********************************************************************
 
 Code ran without errors
 
-Time consumed = 0.01318s
+Time consumed = 0.02687s
 
 ======================================================================
 Inspecting script file align_seqs_fasta.py...
@@ -1681,7 +1827,7 @@ File contents are:
 **********************************************************************
 #!/usr/bin/env python3
 
-"""A python script which finds the best alignment of two DNA sequences which are """
+"""A python script which finds the best alignment of two DNA sequences which are provided in a FASTA format"""
 
 __appname__ = 'align_seqs_fasta.py'
 __author__ = 'Talia Al-Mushadani (ta1915@ic.ac.uk)'
@@ -1692,10 +1838,8 @@ __license__ = "License for this code"
 import csv
 import sys
 
-# function that computes a score
-# by returning the number of matches 
-# starting from arbitrary startpoint
 def calculate_score(s1, s2, l1, l2, startpoint):
+    """function that computes a score by returning the number of matches starting from arbitrary startpoint"""
     # startpoint is the point at which we want to start
     matched = "" # contains string for alignement
     score = 0
@@ -1717,7 +1861,7 @@ def calculate_score(s1, s2, l1, l2, startpoint):
     
     return score
 
-def main(argv):
+def main(argv=sys.argv):
     """ Main entry point of the program """
     if len(sys.argv) > 1:
         input_fasta1 = "../Data/%s" %sys.argv[1]
@@ -1775,7 +1919,7 @@ def main(argv):
     print(s1)
     print(my_best_score)
 
-    g = open("../Data/best_alignment_fasta.txt", 'w')
+    g = open("../Results/best_alignment_fasta.txt", 'w')
     csvwrite = csv.writer(g)
     csvwrite.writerow([my_best_align])
     csvwrite.writerow([s1])
@@ -1785,7 +1929,7 @@ def main(argv):
 if __name__ == "__main__": 
     """Makes sure the "main" function is called from command line"""  
     status = main(sys.argv)
-    sys.exit(status)**********************************************************************
+    sys.exit("Exiting Script")**********************************************************************
 
 Testing align_seqs_fasta.py...
 
@@ -1800,9 +1944,8 @@ Output (only first 500 characters):
 *-**---*--*---*-------*-*---*-*--*-*-*---*---*-----*--***----*--********-**---**--*---***------*-*--**---*-*---*-----*--****--------*--*--*-------**-*--*-*-----*-***-----**-----*-*-**--*--------*--**---*-**--*---*-**---*-*-*-*--**-*-******------**--*---*------****-*-*----*---*-------*-------------**-*-**--**-*------*-*--------**--*---------**---------*-**-------**-*--*--*--------*------------*-*-*--*-*---*-*-*--*-*----------**--------*-*--*------*-------**-----*--------*-----*--*--*----------*---
 **********************************************************************
 
-Code ran without errors
-
-Time consumed = 2.55306s
+Encountered error:
+Exiting Script
 
 ======================================================================
 Inspecting script file control_flow.py...
@@ -1863,6 +2006,7 @@ def find_all_primes(x=22):
     print("There are %d primes between 2 and %d" % (len(allprimes), x))
 
 def main(argv):
+    """main entry point of program"""
     print(even_or_odd(22))
     print(even_or_odd(33))
     print(largest_divisor_five(120))
@@ -1914,7 +2058,7 @@ True
 
 Code ran without errors
 
-Time consumed = 0.02702s
+Time consumed = 0.04907s
 
 ======================================================================
 Inspecting script file test_control_flow.py...
@@ -1958,12 +2102,14 @@ def even_or_odd(x=0):
 
 ###### I SUPPRESSED THIS BLOCK: WHY? #######
 
-def main(argv): 
+def main(argv):
+    """main entry point of program"""
     print even_or_odd(22)
     print even_or_odd(33)
     return 0
 
 if (__name__ == "__main__"):
+    """Makes sure the "main" function is called from command line"""
     status = main(sys.argv)
 ############################################
     
@@ -1980,26 +2126,26 @@ Found one or more doctrings!
 Output (only first 500 characters): 
 
 **********************************************************************
-22 is Even!
-33 is Odd!
 
 **********************************************************************
 
-Code ran without errors
-
-Time consumed = 0.05331s
+Encountered error:
+  File "test_control_flow.py", line 40
+    print even_or_odd(22)
+                    ^
+SyntaxError: invalid syntax
 
 ======================================================================
 ======================================================================
 Finished running scripts
 
-Ran into 1 errors
+Ran into 3 errors
 
 ======================================================================
 ======================================================================
 
 FINISHED WEEKLY ASSESSMENT
 
-Current Points for the Week = 92.0
+Current Points for the Week = 100
 
 NOTE THAT THESE ARE POINTS, NOT MARKS FOR THE WEEK!
