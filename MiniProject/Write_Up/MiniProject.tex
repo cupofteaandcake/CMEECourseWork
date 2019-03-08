@@ -1,0 +1,149 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}
+\usepackage{graphicx}
+\usepackage{lineno}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{tabularx}
+\usepackage[justification=centering, labelfont=bf]{caption}
+\usepackage{natbib}
+\setcitestyle{citesep={;}, aysep={,}}
+
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage[scaled=1]{helvet}
+\usepackage[helvet]{sfmath}
+\everymath={\sf}
+
+\doublespacing
+
+\title{Phenomenological vs Mechanistic Models: Model Selection and Fitting of Thermal Performance Curves}
+\author{By: Talia Al-Mushadani}
+\date{March 2019}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+    \LARGE
+    \textbf{Phenomenological vs Mechanistic Models: Model Selection and Fitting of Thermal Performance Curves}
+    
+    \vspace{1cm}
+    By: \\ Talia Al-Mushadani
+    
+    \vspace{1.3cm}
+    \includegraphics[width=0.4\textwidth]{Write_Up_Images/ICLCrest.png}
+    
+    \vspace{0.3cm}
+    CMEE Mini-Project Submission
+    \\March 2019
+    \\
+    \textit{Word Count: 2484}
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\begin{linenumbers}
+\section{Abstract}
+The changes in global temperatures caused by climate change is having a profound impact on our environment in the way that metabolic rates and other related biological rates are quickly being shifted. Understanding exactly how these changes impact metabolic rates is key to many fields including genetics, where questions about how mutation rate will be affected by climate change are now being asked. This project aimed to investigate the modelling accuracy of two different mechanistic models and a phenomenological polynomial model when fitted with thermal performance curve data, and to see how the inclusion of mass data can help or hinder model fitting. This project found that from 176 thermal performance curves, more than 53\% of the curves were best fit by a mass-excluding simplified Schoolfield model, whilst the mass-including Gillooly model only fit 0.05\% of the curves, performing worse than a biologically-uninformed cubic model. This thereby suggests that the inclusion of Kleiber's law as one of the central paradigms of the metabolic theory of ecology could be deeply misguided.
+\newpage
+\section{Introduction}
+It is widely accepted that climate change is quickly and significantly changing our environment, especially in relation to how the change in temperature is affecting the environment across all biological scales \citep{Houghton2001, Pawar2016}. One key rate that is at risk of being affected is the mutation rate of genes in many organisms, which could cause an increase in the occurrences of cancers. Recent research into how temperature affects mutation rate has looked at the link between mutation rate and metabolic rate \citep{Chu2018a}, by using a standard model found in the metabolic theory of ecology, which was first proposed by \citep{Gillooly2001, Savage2004, Niklas2001}.
+This model is an example of a mechanistic model which characterises the effects of body mass and temperature data on metabolic rate, by combining the Boltzmann factor from the Van’t Hoff-Arrhenius equation \citep{Arrhenius1889}, with the allometric scaling of body mass in relation to metabolic rate (Kleiber's Law), which was first proposed by Max Kleiber in his book \textit{The Fire of Life} (1961; 2. ed. 1975):
+
+\begin{equation}
+    B = I_{0}M^{3/4}e^{\frac{-E}{kT}}
+\end{equation}
+
+However, as the Gillooly model is based upon the Boltzmann factor, which is only capable of modelling the initial increasing phase of thermal performance curves, by using the average activation energy, does not include any information about the decreasing phase of the thermal performance curves which occurs after some optimum temperature, \textit{$T_{pk}$} \citep{Schoolfield1981, Brown2004}. There are, however, models that are capable of describing this decrease after \textit{$T_{pk}$}, which is caused by the denaturing of many key proteins at high temperatures \citep{Sharpe1977, Schoolfield1981}. One such model is the Sharpe-Schoolfield model \citep{Schoolfield1981}, that provides an alternative mechanistic model, which does not contain any express knowledge as to the body mass of the organisms in question:
+
+\begin{equation}
+    B = \frac{B_{0}e^{\frac{-E}{k}(\frac{1}{T} - \frac{1}{283.15})}}{1 + e^{\frac{E_l}{k}(\frac{1}{T_l}-\frac{1}{T})} + e^{\frac{E_h}{k}(\frac{1}{T_h}-\frac{1}{T})}}
+\end{equation}
+
+Whilst this equation demonstrates the most complete version of the Sharpe-Schoolfield model, it requires that there is sufficient data coverage over a large range of temperatures. As such for this project, a more simplified version of the Sharpe-Schoolfield model will be used which doesn't require data for low temperature inactivation:
+
+\begin{equation}
+    B = \frac{B_{0}e^{\frac{-E}{k}(\frac{1}{T} - \frac{1}{283.15})}}{1 + e^{\frac{E_h}{k}(\frac{1}{T_h}-\frac{1}{T})}}
+\end{equation}
+
+Through this project I aim to asses whether the use of such mechanistic models which include biological information are able to describe the relationships between temperature and metabolic rate found in thermal performance curves more effectively than a phenomenological model, which in this case will be a biologically-uninformative polynomial model, as well as to investigate whether the inclusion of mass data when modelling metabolic rates is more effective than a model which omits mass data.
+
+\section{Data and Methods}
+\subsection{Data Processing}
+BioTraits \citep{Dell2013} is a database containing thermal performance data collated from various published scientific papers. This data was then subsetted down to 176 thermal performance curves (collectively comprising of 1625 data points), by removing all curves which did not have any consumer mass data provided. This dataset was then further subsetted to only retain 8 columns of biologically-relevant data required for model selection, which included: the ID of the thermal performance curve, the name of the metabolic trait observed, the value of the metabolic trait observed, the units of the metabolic trait observed, the name of the consumer observed, the kingdom to which the consumer belonged, the body temperature of the consumer and the mass of the consumer in kg.
+Next, all of the thermal performance curves with less than 5 data points per curve were removed from the dataset, as you require at least one more data point than the maximum number of unknown parameters you are estimating, which in this case will be the 4 unknown parameters in simplified Schoolfield model. Finally, two columns were added to the dataset, one which contained the temperature for each data point converted from degrees Celsius to Kelvin, and the other which contained the mass for each data point converted from kg to g, which is required for the Gillooly model.
+\subsection{Polynomial Selection}
+To decide upon which biologically uninformative phenomenological model will be used to compare to the Gillooly and simplified Schoolfield models, 3 different polynomial linear models, a linear, a quadratic and a cubic model, were fitted using the metabolic trait value as the dependent variable and the body temperature of the consumer as the independent variable. The best fitting model was then assessed by calculating and comparing the Akaike information criterion (AIC) value of each model, using the \textit{stats} package \citep{R2018}.
+\subsection{NLLS Starting Values}
+Starting values were calculated before model fitting, done using \textit{minpack.lm} \citep{Elzhov2016} and model selection took place for each thermal performance curve. This was a necessary step as the Non-Linear Least Squares (NLLS) algorithm, which in this case took the form of the Levenberg-Marquardt algorithm, requires an initial input to be able to converge on the best fitting values. To evaluate the various starting values for the Gillooly and simplified Schoolfield models, the thermal performance curves were split into two sections; the data points up to and including the data point with the peak metabolic trait value ($T_{peak}$), and the data points after the peak metabolic trait value. 
+\subsubsection{$LogB_{0}$}
+$LogB_{0}$ was initially estimated by taking the natural logarithm of the minimum metabolic trait value.
+\subsubsection{$E_{i}$}
+$E_{i}$ was estimated by subsetting the data to only contain the data points recorded between 273.15K and 313.15K, as the Gillooly model was only designed to be applicable over this range of temperatures. The value of $E_{i}$ was then calculated by calculating the absolute gradient of a linear model composed of the natural logarithm of the metabolic trait values divided by the masses to the power of $\frac{3}{4}$ against the $\frac{1}{kT}$, in which T is the temperature in Kelvin, and k is the Boltzmann constant.
+\subsubsection{$LogI_{0}$}
+$LogI_{0}$ is originally estimated by producing the same linear model as for $E_{i}$ but instead extracting the intercept of the model.
+\subsubsection{$E$}
+$E$ was estimated by calculating the gradient of a thermal performance curve, using only the data points up to and including $T_{peak}$, which was made possible by producing a linear model of the natural logarithm of the metabolic trait values against $\tfrac{1}{kT}$, in which k is the Boltzmann constant and T is the temperature in Kelvin. The gradient was found by taking the absolute of the slope coefficient extracted from the linear model. In the case that $E$ could not be calculated, it was taken to be a standard value of 0.7.
+\subsubsection{$E_{h}$}
+$E_{h}$ was estimated using the same method as $E$, but the data points used were only the data points after and including $T_{peak}$. However, as there were multiple temperature performance curves where there wasn't a data point after the $T_{peak}$ data point, which prevents a gradient from being calculated, $E_{h}$ couldn't always be calculated using a linear model, and as such had to be sensibly estimated, in this case as 1.1 times the value of $E$.
+\subsubsection{$T_{h}$}
+Finally, $T_{h}$ was initially estimated by producing a linear model containing the natural logarithm of the metabolic trait values against $\tfrac{1}{kT}$ using only the data points after $T_{peak}$, and then extracting both the intercept coefficient and the slope coefficient. $T_{h}$ is then evaluated as being 1 divided by k multiplied by the mean of the natural logarithm minus the intercept coefficient, all divided by the slope coefficient. In the case that there isn't at least 1 data point after the $T_{peak}$ data point, $T_{h}$ is sensibly estimated as being equal to $T_{peak}$.
+\subsection{Model Fitting}
+The three models were fitted for each thermal performance curve, with the polynomial model being fit using the \textit{lm} function, whilst both the Gillooly and simplified Schoolfield models were fit using the \textit{nlsLM} function from the \textit{minpack.lm} \citep{Elzhov2016} package. Whilst fitting to explore the entire parameter space, the parameters were randomised using truncated normal distributions \citep{Mersmann2018}, with a mean equal to the starting values for each parameter. The AIC values of each model, which evaluates the relative goodness-of-fit of a model, were then computed using the \textit{AIC} function from the \textit{stats} package \citep{R2018}, and were compared to evaluate the best fitting model for each curve. Finally, the best model for the entire dataset of 176 thermal performance curves was assessed by comparing the number of times each model was selected as the best model in relation to the curve.
+\subsection{Computing Languages}
+\textit{Python} \citep{Python2018} was used to initially subset the entire BioTraits dataset and assess which model was the best fitting due to the speed with which the \textit{pandas} package \citep{Scipy2010} allowed a very large dataset to be processed. \textit{R} \citep{R2018} was then used to calculate the starting parameters for the models and to do the model fitting and selection, as well as to produce all the plots, due to it's ease of use and the plotting capabilities of the \textit{ggplot2} package \citep{Wickham2016}. Lastly, a \textit{bash} script was used to run the \textit{Python}, \LaTeX, and \textit{R} scripts, as \textit{bash} is capable of quickly and easily handling and running multiple different file types.
+
+\section{Results}
+\subsection{Polynomial Selection}
+The best phenomenological model, which could then be used to compare to the two mechanistic models, the Gillooly and the simplified Schoolfield models, was assessed by selecting the model with the lowest AIC value. In this case, the lowest AIC value was the AIC for the cubic model (see Table 1), and so a cubic model was fit for every thermal performance curve in the model fitting stage.
+
+\end{linenumbers}
+\begin{table}[h]
+\centering
+\begin{tabularx}{\textwidth}{| X | X | X |}
+ \hline
+ Linear & Quadratic & Cubic \\ 
+ \hline
+ 6364 & 5585 & 5449 \\ 
+ \hline
+\end{tabularx}
+\caption{\label{Table 1} Summary of the AIC values of each polynomial model. The cubic model has the lowest value, and as such was chosen as the phenomenological comparison to the Gillooly and simplified Schoolfield model.}
+\end{table}
+
+\begin{linenumbers}
+\subsection{Model Fitting}
+The NLLS converged upon a solution for both the simplified Schoolfield model and the Gillooly model for all 176 thermal performance curves, with the cubic model also fitting to the thermal performance curves, as anticipated. To be able to select which model was the best fit to each thermal performance curve, the AIC of each model were compared and the model with the lowest AIC value was determined to the best model for that specific data. The best model for each curve was recorded and when the total number of times each model was selected was evaluated, it showed that the simplified Schoolfield model was the most selected model (for 53.5\% of the thermal curves the Schoolfield model was selected), however the cubic model was almost as likely to be selected (for 46\% of the thermal curves the cubic model was selected), whilst the Gillooly model was selected only once (for 0.5\% of the curves) as being the best fitting model (figure 1). These likelihoods become apparent when you look at an example thermal performance curve with the 3 fitted models overlaying the curve (figure 2).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../Results/best_model_evaluation.pdf}
+    \caption{A bar plot displaying that the Schoolfield model is the model most often chosen to best fit the thermal performance curves, however the cubic model is almost as likely to be selected as the best model. It is clear that the Gillooly model is only once chosen as the best fitting model for any thermal performance curve.}
+    \label{Figure 1}
+\end{figure}
+\FloatBarrier
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../Results/Model_Fitting/MTD2336_Cubic_Gillooly_Schoolfield.pdf}
+    \caption{An example thermal performance curve for the radial growth rate of \textit{Beauveria bassiana}. The measured thermal performance curve is represented by the points, whilst the predictions by each of the models based on that data are represented by the lines. It is evident from this that the Schoolfield (orange line) and cubic (purple line) models more closely predict the measured data points than the Gillooly (pink line) model.}
+    \label{Figure 2}
+\end{figure}
+\FloatBarrier
+
+\section{Discussion}
+Overall, the Gillooly model was shown to be a poor predictor of metabolic rate in comparison to both the Schoolfield and cubic models, especially in comparison to the Schoolfield model, the other mechanistic model. These results pose a direct challenge to one of the key concepts of the metabolic theory of ecology, in that they question whether Kleiber's law really is applicable across all organisms. However, there have been multiple studies looking into the validity of Kleiber's law \citep{White2012,Kontopoulos2018}, especially analysing whether there is significant evidence to choose a $\frac{3}{4}$ power law over a $\frac{2}{3}$ power law \citep{Hudson2013, Hulbert2014, Dodds2001}, or whether there is indeed a universal power law relating metabolic rate and body mass \citep{Downs2008}. These studies have especially highlighted that much of the evidence provided for the Gillooly model comes from basal metabolic rates \citep{Hudson2013}, and as such is limited in it's application. Whilst Gillooly et al. (2001) did state that the model is to be considered a zeroeth-order model, and that variation will occur, the amount of variation from the true values of metabolic rate displayed in these results highlights that the Gillooly model cannot without significant caveats be used to accurately predict metabolic rate, even over the initial increasing phase of the thermal performance curves for which the model is designed to work.
+In comparison the Schoolfield and cubic models are capable of better predicting the thermal performance curves due to their ability to use the entire thermal performance curve, as well as the omission of mass (and as such Kleiber's law) in those models. Whilst the cubic model is capable of modelling thermal performance curves with a relative degree of accuracy, especially over incomplete thermal performances curves which only contain data up to the peak metabolic rate, the Schoolfield model is clearly more suitable when modelling thermal performance curves due to the inclusion of biological information which allows you to make biologically relevant inferences from the fitted models, and is the most selected model when provided with complete thermal performance curves.
+
+There are however limitations inherent with this project, especially in relation to the dataset used to fit these models. One such limitation is the number of thermal performance curves in the BioTraits database which contain both body mass data and that are made up of at least 5 data points, which are required to allow the simplified Schoolfield to be fit. This reduces the ability to make inferences upon the frequency with which each model is selected, mainly in relation to the selection of the Schoolfield or cubic models. Another such limitation is the number of curves which were only measured up to the peak metabolic rate ($T_{pk}$), and as such the simplified Schoolfield is only able to use estimates of $E_{h}$ and $T_{h}$ to calculate metabolic rates after $T_{pk}$. Although, there are many limitations inherent to the Gillooly model, there is currently no other models for metabolic rate that explicitly includes body mass, and as such it continues to be used all across the study of the metabolic theory of ecology. This clearly illustrates the need for greater research into the link between body mass and metabolic rate.
+
+\section{Conclusion}
+Modelling thermal performance curves has only become even more vital with the acceleration of climate change, which may be causing unknown effects to biological rates such as mutation rate. This project has shown that the main model behind many inferences in biological rates is frequently less accurate than even a phenomenological model, and that more classic models based purely upon the effect of temperature on proteins are more reliable and accurate at modelling metabolic rates. Whilst there are limitations caused by the number of thermal performance curves that could be used to fit the models, this doesn't discount similar inferences made by other studies into the usability of the Gillooly model. What this project has highlighted is the need for further research into the relationship between body mass and metabolic rate, and for the use of multiple alternative models when making inferences about the effect of temperature on biological rates, other than metabolic rates.
+
+\section{References}
+\bibliographystyle{agsm}
+\bibliography{MiniProject}
+\end{linenumbers}
+\end{document}
